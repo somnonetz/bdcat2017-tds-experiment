@@ -98,9 +98,13 @@
                 }
             },
             "parameters": {
-                "montage": {
-                    "is_optional": true,
-                    "description": "List of channel types contained in the Polysomnography EDF file. Should contain one list element for each corresponding channel. Possible values are eeg, eog, emg, ecg and resp"
+                "format": "object_as_json_cli_arg",
+                "is_optional": true,
+                "descriptions": {
+                    "montage": {
+                        "is_optional": true,
+                        "description": "List of channel types contained in the Polysomnography EDF file. Should contain one list element for each corresponding channel. Possible values are eeg, eog, emg, ecg and resp"
+                    }
                 }
             }
         },
