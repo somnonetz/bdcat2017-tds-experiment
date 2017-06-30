@@ -1,0 +1,123 @@
+{
+    "format_version": "1",
+    "experiment": {
+        "instructions": {
+            "application_container_description": {
+                "parameters": {
+                    "montage": [
+                        "eeg",
+                        "eeg",
+                        "eeg",
+                        "eeg",
+                        "eeg",
+                        "eeg",
+                        "eog",
+                        "eog",
+                        "emg",
+                        "emg",
+                        "ecg",
+                        "resp",
+                        "resp",
+                        "resp"
+                    ]
+                },
+                "container_ram": 2048,
+                "image": "docker.io/curiouscontainers/cc-tds-app:0.11"
+            },
+            "input_files": [
+                {
+                    "connector_access": {
+                        "container": "B000101",
+                        "ssl_verify": false,
+                        "file": "b000101.rec",
+                        "subject": "B0001",
+                        "xnat_url": "https://xnat.f4.htw-berlin.de/xnat",
+                        "container_type": "scans",
+                        "project": "siesta",
+                        "resource": "1653",
+                        "session": "B000101",
+                        "auth": {
+                            "password": "{{xnat_password}}",
+                            "auth_type": "basic",
+                            "username": "{{xnat_username}}"
+                        }
+                    },
+                    "connector_type": "xnat_http"
+                }
+            ],
+            "result_files": [
+                {
+                    "connector_access": {
+                        "container": "TDS",
+                        "ssl_verify": false,
+                        "file": "psg_getTDS.mat",
+                        "subject": "B0001",
+                        "xnat_url": "https://xnat.f4.htw-berlin.de/xnat",
+                        "container_type": "assessors",
+                        "project": "siesta",
+                        "xsi_type": "xnat:imageAssessorData",
+                        "auth": {
+                            "password": "{{xnat_password}}",
+                            "auth_type": "basic",
+                            "username": "{{xnat_username}}"
+                        },
+                        "session": "B000101"
+                    },
+                    "connector_type": "xnat_http",
+                    "local_result_file": "tds"
+                }
+            ],
+            "no_cache": true
+        },
+        "meta_data": {
+            "applications": {
+                "docker.io/curiouscontainers/cc-tds-app:0.11": {
+                    "src_type": "git",
+                    "app_type": "docker",
+                    "build_type": "docker",
+                    "build_config": {
+                        "build_command": "bash ./build.sh",
+                        "dockerfile_path": "./Dockerfile"
+                    },
+                    "src_config": {
+                        "clone_url": "https://github.com/somnonetz/cc-tds-app.git",
+                        "commit": "bcc73230fefc52adcbffb1c7ce467f12357e22da"
+                    }
+                }
+            },
+            "input_files": [
+                {
+                    "is_optional": false,
+                    "description": "Polysomnography in EDF format (.edf)."
+                }
+            ],
+            "result_files": {
+                "tds": {
+                    "is_optional": false,
+                    "description": "Matlab data file (.mat) containing results of a Time-Delay-Stability (TDS) analysis performed on a Polysomnography in EDF format. File can be loaded in Matlab and Octave environments."
+                }
+            },
+            "parameters": {
+                "montage": {
+                    "is_optional": true,
+                    "description": "List of channel types contained in the Polysomnography EDF file. Should contain one list element for each corresponding channel. Possible values are eeg, eog, emg, ecg and resp"
+                }
+            }
+        },
+        "execution_engine": {
+            "engine_config": {
+                "install_requirements": {
+                    "docker_engine_version": "17.05.0-ce",
+                    "cc_server_version": "0.11",
+                    "docker_compose_version": "0.14"
+                },
+                "url": "https://ccserver.f4.htw-berlin.de/cc",
+                "auth": {
+                    "password": "{{cc_password}}",
+                    "username": "{{cc_username}}"
+                }
+            },
+            "engine_type": "curious_containers"
+        }
+    }
+}
