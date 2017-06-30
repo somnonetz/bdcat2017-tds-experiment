@@ -98,7 +98,6 @@
                 }
             },
             "parameters": {
-                "format": "object_as_json_cli_arg",
                 "is_optional": true,
                 "descriptions": {
                     "montage": {
