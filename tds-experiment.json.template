@@ -110,9 +110,7 @@
         "execution_engine": {
             "engine_config": {
                 "install_requirements": {
-                    "docker_engine_version": "17.05.0-ce",
-                    "cc_server_version": "0.11",
-                    "docker_compose_version": "1.14.0"
+                    "cc_server_version": "0.11"
                 },
                 "url": "https://ccserver.f4.htw-berlin.de/cc",
                 "auth": {
