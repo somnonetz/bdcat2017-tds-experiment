@@ -118,7 +118,7 @@
                     "username": "{{cc_username}}"
                 }
             },
-            "engine_type": "curious_containers"
+            "engine_type": "curious-containers"
         }
     }
 }
