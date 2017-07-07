@@ -68,7 +68,7 @@
                     },
                     "src_config": {
                         "clone_url": "https://github.com/somnonetz/cc-tds-app.git",
-                        "commit": "bcc73230fefc52adcbffb1c7ce467f12357e22da"
+                        "commit": "1126b2e5ab06ee17ce0013ced0a7c87aa81c3213"
                     }
                 }
             },
