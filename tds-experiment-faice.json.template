@@ -3,24 +3,7 @@
     "experiment": {
         "instructions": {
             "application_container_description": {
-                "parameters": {
-                    "montage": [
-                        "eeg",
-                        "eeg",
-                        "eeg",
-                        "eeg",
-                        "eeg",
-                        "eeg",
-                        "eog",
-                        "eog",
-                        "emg",
-                        "emg",
-                        "ecg",
-                        "resp",
-                        "resp",
-                        "resp"
-                    ]
-                },
+                "parameters": {},
                 "container_ram": 2048,
                 "image": "docker.io/curiouscontainers/cc-tds-app:0.11"
             },
@@ -28,7 +11,6 @@
                 {
                     "connector_access": {
                         "container": "B000101",
-                        "ssl_verify": false,
                         "file": "b000101.rec",
                         "subject": "B0001",
                         "xnat_url": "https://xnat.f4.htw-berlin.de/xnat",
@@ -43,13 +25,18 @@
                         }
                     },
                     "connector_type": "xnat_http"
+                },
+                {
+                    "connector_access": {
+                        "url": "https://raw.githubusercontent.com/somnonetz/cc-tds-app/master/montage_siesta.txt"
+                    },
+                    "connector_type": "http"
                 }
             ],
             "result_files": [
                 {
                     "connector_access": {
                         "container": "TDS",
-                        "ssl_verify": false,
                         "file": "psg_getTDS.mat",
                         "subject": "B0001",
                         "xnat_url": "https://xnat.f4.htw-berlin.de/xnat",
@@ -88,7 +75,11 @@
             "input_files": [
                 {
                     "is_optional": false,
-                    "description": "Polysomnography in EDF format (.edf)."
+                    "description": "Polysomnography in EDF format."
+                },
+                {
+                    "is_optional": false,
+                    "description": "Montage in plain text format: a list of signal types contained in the Polysomnography EDF file. Should contain one signal type per row for each corresponding channel. Possible values are eeg, eog, emg, ecg and resp."
                 }
             ],
             "result_files": {
@@ -100,9 +91,41 @@
             "parameters": {
                 "is_optional": true,
                 "descriptions": {
-                    "montage": {
+                    "wl_sfe": {
                         "is_optional": true,
-                        "description": "List of channel types contained in the Polysomnography EDF file. Should contain one list element for each corresponding channel. Possible values are eeg, eog, emg, ecg and resp"
+                        "description": "windowlength of signal feature extraction, default 2 secs"
+                    },
+                    "ws_sfe": {
+                        "is_optional": true,
+                        "description": "windowshift of signal feature extraction, default 1 secs"
+                    },
+                    "wl_xcc": {
+                        "is_optional": true,
+                        "description": "windowlength of crosscorrelation in seconds, default 60"
+                    },
+                    "ws_xcc": {
+                        "is_optional": true,
+                        "description": "windowshift of crosscorrelation in seconds, default 30"
+                    },
+                    "wl_tds": {
+                        "is_optional": true,
+                        "description": "windowlength of stability analysis in seconds, default 5"
+                    },
+                    "ws_tds": {
+                        "is_optional": true,
+                        "description": "windowshift of stability analysis in seconds, default 1"
+                    },
+                    "mld_tds": {
+                        "is_optional": true,
+                        "description": "maximum lag difference in window to be accounted as stable sequence, default 2"
+                    },
+                    "mlf_tds": {
+                        "is_optional": true,
+                        "description": "minimum lag fraction in window that need to fulfill mld_tds, default: 0.8"
+                    },
+                    "debug": {
+                        "is_optional": true,
+                        "description": "if set to 1 debug information is provided, default 0"
                     }
                 }
             }
