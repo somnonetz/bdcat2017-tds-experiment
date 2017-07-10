@@ -1,0 +1,7 @@
+MCRroot: /usr/local/MATLAB/MATLAB_Runtime/v85
+data:
+  class: File
+  path: "{{data_path}}"
+montage_filename:
+  class: File
+  path: "{{montage_path}}"
