@@ -1,7 +1,7 @@
 MCRroot: /usr/local/MATLAB/MATLAB_Runtime/v85
 data:
   class: File
-  path: "{{data_path}}"
+  path: ""
 montage_filename:
   class: File
-  path: "{{montage_path}}"
+  path: ""
