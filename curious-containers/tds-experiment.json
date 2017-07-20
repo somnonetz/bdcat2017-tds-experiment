@@ -3,7 +3,7 @@
   "execution_engine": {
     "engine_config": {
       "install_requirements": {
-        "cc_server_version": "0.11"
+        "cc_server_version": "0.12"
       },
       "url": "https://ccserver.f4.htw-berlin.de/cc",
       "auth": {
@@ -17,7 +17,7 @@
     "application_container_description": {
       "parameters": {},
       "container_ram": 2048,
-      "image": "docker.io/curiouscontainers/cc-tds-app:0.11"
+      "image": "docker.io/curiouscontainers/cc-tds-app"
     },
     "input_files": [
       {
@@ -70,7 +70,7 @@
   },
   "meta_data": {
     "applications": {
-      "docker.io/curiouscontainers/cc-tds-app:0.11": {
+      "docker.io/curiouscontainers/cc-tds-app": {
         "description": "Matlab TDS is an implementation of the Time Delay Stability algorithm. It is used in sleep medicine to determine the link strength between signals in a polysomnographic recording in EDF format. The Matlab TDS software is developed at CBMI (HTW Berlin - University of Applied Sciences)",
         "repository_type": "git",
         "repository_config": {
