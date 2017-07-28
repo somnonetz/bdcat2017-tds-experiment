@@ -40,7 +40,7 @@
         "file_extension_preference": "txt"
       }
     },
-    "result_files": {
+    "output_files": {
       "tds": {
         "file_extension_preference": "mat"
       },
