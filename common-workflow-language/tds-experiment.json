@@ -31,6 +31,22 @@
           "dockerfile_path": "./Dockerfile"
         }
       }
+    },
+    "input_files": {
+      "data": {
+        "file_extension_preference": "edf"
+      },
+      "montage_filename": {
+        "file_extension_preference": "txt"
+      }
+    },
+    "result_files": {
+      "tds": {
+        "file_extension_preference": "mat"
+      },
+      "tds_all": {
+        "file_extension_preference": "mat"
+      }
     }
   }
 }

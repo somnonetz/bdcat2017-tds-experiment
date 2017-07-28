@@ -40,7 +40,7 @@
       },
       {
         "connector_access": {
-          "url": "https://raw.githubusercontent.com/somnonetz/cc-tds-app/master/montage_siesta.txt"
+          "url": "https://raw.githubusercontent.com/somnonetz/bdcat2017-tds-experiment/master/montage_siesta.txt"
         },
         "connector_type": "http"
       }
@@ -71,7 +71,7 @@
   "meta_data": {
     "applications": {
       "docker.io/curiouscontainers/cc-tds-app": {
-        "description": "Matlab TDS is an implementation of the Time Delay Stability algorithm. It is used in sleep medicine to determine the link strength between signals in a polysomnographic recording in EDF format. The Matlab TDS software is developed at CBMI (HTW Berlin - University of Applied Sciences)",
+        "doc": "Matlab TDS is an implementation of the Time Delay Stability algorithm. It is used in sleep medicine to determine the link strength between signals in a polysomnographic recording in EDF format. The Matlab TDS software is developed at CBMI (HTW Berlin - University of Applied Sciences)",
         "repository_type": "git",
         "repository_config": {
           "clone_url": "https://github.com/somnonetz/cc-tds-app.git",
@@ -86,58 +86,59 @@
     },
     "input_files": [
       {
-        "is_optional": false,
-        "description": "Polysomnography in EDF format."
+        "doc": "Polysomnography in EDF format.",
+        "file_extension_preference": "edf"
       },
       {
-        "is_optional": false,
-        "description": "Montage in plain text format: a list of signal types contained in the Polysomnography EDF file. Should contain one signal type per row for each corresponding channel. Possible values are eeg, eog, emg, ecg and resp."
+        "doc": "Montage in plain text format: a list of signal types contained in the Polysomnography EDF file. Should contain one signal type per row for each corresponding channel. Possible values are eeg, eog, emg, ecg and resp.",
+        "file_extension_preference": "txt"
       }
     ],
     "result_files": {
       "tds": {
         "is_optional": false,
-        "description": "Matlab data file (.mat) containing results of a Time-Delay-Stability (TDS) analysis performed on a Polysomnography in EDF format. File can be loaded in Matlab and Octave environments."
+        "doc": "Matlab data file containing results of a Time-Delay-Stability (TDS) analysis performed on a Polysomnography in EDF format. File can be loaded in Matlab and Octave environments.",
+        "file_extension_preference": "mat"
       }
     },
     "parameters": {
       "is_optional": true,
-      "descriptions": {
+      "docs": {
         "wl_sfe": {
           "is_optional": true,
-          "description": "windowlength of signal feature extraction, default 2 secs"
+          "doc": "windowlength of signal feature extraction, default 2 secs"
         },
         "ws_sfe": {
           "is_optional": true,
-          "description": "windowshift of signal feature extraction, default 1 secs"
+          "doc": "windowshift of signal feature extraction, default 1 secs"
         },
         "wl_xcc": {
           "is_optional": true,
-          "description": "windowlength of crosscorrelation in seconds, default 60"
+          "doc": "windowlength of crosscorrelation in seconds, default 60"
         },
         "ws_xcc": {
           "is_optional": true,
-          "description": "windowshift of crosscorrelation in seconds, default 30"
+          "doc": "windowshift of crosscorrelation in seconds, default 30"
         },
         "wl_tds": {
           "is_optional": true,
-          "description": "windowlength of stability analysis in seconds, default 5"
+          "doc": "windowlength of stability analysis in seconds, default 5"
         },
         "ws_tds": {
           "is_optional": true,
-          "description": "windowshift of stability analysis in seconds, default 1"
+          "doc": "windowshift of stability analysis in seconds, default 1"
         },
         "mld_tds": {
           "is_optional": true,
-          "description": "maximum lag difference in window to be accounted as stable sequence, default 2"
+          "doc": "maximum lag difference in window to be accounted as stable sequence, default 2"
         },
         "mlf_tds": {
           "is_optional": true,
-          "description": "minimum lag fraction in window that need to fulfill mld_tds, default: 0.8"
+          "doc": "minimum lag fraction in window that need to fulfill mld_tds, default: 0.8"
         },
         "debug": {
           "is_optional": true,
-          "description": "if set to 1 debug information is provided, default 0"
+          "doc": "if set to 1 debug information is provided, default 0"
         }
       }
     }
