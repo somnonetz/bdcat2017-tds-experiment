@@ -10,10 +10,10 @@
   },
   "instructions": {
     "cwl_file": {
-      "url": "https://raw.githubusercontent.com/somnonetz/bdcat2017-tds-experiment/master/common-workflow-language/sn_TDS-docker.cwl"
+      "url": "https://raw.githubusercontent.com/somnonetz/tds-experiment/master/common-workflow-language/sn_TDS-docker.cwl"
     },
     "cwl_input_file": {
-      "url": "https://raw.githubusercontent.com/somnonetz/bdcat2017-tds-experiment/master/common-workflow-language/cwl-inputs.yaml"
+      "url": "https://raw.githubusercontent.com/somnonetz/tds-experiment/master/common-workflow-language/cwl-inputs.yaml"
     }
   },
   "meta_data": {
