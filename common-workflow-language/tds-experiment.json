@@ -3,7 +3,8 @@
   "execution_engine": {
     "engine_config": {
       "install_requirements": {
-        "cwltool_version": "1.0.20170707200431"
+        "cwltool_version": "1.0.20170707200431",
+        "infrastructure_ram": 3072
       }
     },
     "engine_type": "common-workflow-language"

@@ -3,7 +3,8 @@
   "execution_engine": {
     "engine_config": {
       "install_requirements": {
-        "cc_server_version": "0.12"
+        "cc_server_version": "0.12",
+        "infrastructure_ram": 3072
       },
       "url": "https://ccserver.f4.htw-berlin.de/cc",
       "auth": {
