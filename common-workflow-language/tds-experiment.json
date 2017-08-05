@@ -4,7 +4,8 @@
     "engine_config": {
       "install_requirements": {
         "cwltool_version": "1.0.20170707200431",
-        "host_ram": 3072
+        "host_ram": 3072,
+        "host_cpus": 2
       }
     },
     "engine_type": "common-workflow-language"

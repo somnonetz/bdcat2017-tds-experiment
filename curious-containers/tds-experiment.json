@@ -4,7 +4,8 @@
     "engine_config": {
       "install_requirements": {
         "cc_server_version": "0.12",
-        "host_ram": 3072
+        "host_ram": 3072,
+        "host_cpus": 2
       },
       "url": "https://ccserver.f4.htw-berlin.de/cc",
       "auth": {
