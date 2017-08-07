@@ -4,7 +4,7 @@ baseCommand: run_sn_TDS.sh
 
 hints:
   DockerRequirement:
-    dockerPull: docker.io/curiouscontainers/cc-tds-app
+    dockerPull: docker.io/curiouscontainers/cc-tds-app:cloudam2017
 
 inputs:
   MCRroot:
