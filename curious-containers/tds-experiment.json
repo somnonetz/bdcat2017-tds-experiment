@@ -42,7 +42,7 @@
       },
       {
         "connector_access": {
-          "url": "https://raw.githubusercontent.com/somnonetz/bdcat2017-tds-experiment/master/montage_siesta.txt"
+          "url": "https://raw.githubusercontent.com/somnonetz/tds-experiment/master/montage_siesta.txt"
         },
         "connector_type": "http"
       }
