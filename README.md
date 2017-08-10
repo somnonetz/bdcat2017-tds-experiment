@@ -14,7 +14,7 @@ with two different execution engines, [Curious Containers](https://www.curious-c
 Install [FAICE](https://github.com/curious-containers/faice) tools, to run an experiment.
 
 
-### Option 1
+### Option 1 (Curious Containers)
 
 Run the experiment remotely with a [Curious Containers installation](https://ccserver.f4.htw-berlin.de) in the HTW
 Berlin cloud infrastructure. Input and result files will be accessed in [XNAT](https://xnat.f4.htw-berlin.de/xnat/).
@@ -27,9 +27,9 @@ The faice tool will ask for user credentials. Required values are `cc_username`,
 `xnat_password`.
 
 
-### Option 2
+### Option 2 (Curious Containers)
 
-Create a Vagrant VM and run the experiment localy with Curious Containers. Input and result files will be accessed in
+Create a Vagrant VM and run the experiment localy with Curious Containers. Input and result files are accessed in
 the local file system.
 
 ```bash
@@ -39,22 +39,32 @@ faice vagrant https://raw.githubusercontent.com/somnonetz/tds-experiment/master/
 The faice tool will ask for user credentials, but none of them are strictly required.
 
 
-### Option 3
+### Option 3 (Curious Containers)
 
-Create a Vagrant VM and run the experiment localy with Curious Containers. Input and result files will be accessed in
+Create a Vagrant VM and run the experiment localy with Curious Containers. Input and result files are accessed in
 [XNAT](https://xnat.f4.htw-berlin.de/xnat/).
 
 ```bash
 faice vagrant --remote-data https://raw.githubusercontent.com/somnonetz/tds-experiment/master/curious-containers/tds-experiment.json
 ```
 
-The faice tool will ask for user credentials. Only `xnat_username` and
-`xnat_password` are required values.
+The faice tool will ask for user credentials. Only `xnat_username` and `xnat_password` are required values.
 
-### Option 4
+### Option 4 (Curious Containers)
 
-Create a Vagrant VM and run the experiment localy with CWLTool (Command Workflow Language). Input and result files will
-be accessed in the local file system.
+Create a Vagrant VM and run the experiment localy with Curious Containers. Input files are downloaded from
+[XNAT](https://xnat.f4.htw-berlin.de/xnat/), but result files are stored in the local file system.
+
+```bash
+faice vagrant --remote-input-data https://raw.githubusercontent.com/somnonetz/tds-experiment/master/curious-containers/tds-experiment.json
+```
+
+The faice tool will ask for user credentials. Only `xnat_username` and `xnat_password` are required values.
+
+### Option 5 (Common Workflow Language)
+
+Create a Vagrant VM and run the experiment localy with CWLTool (Command Workflow Language). Input and result files are
+accessed in the local file system.
 
 ```bash
 faice vagrant https://raw.githubusercontent.com/somnonetz/tds-experiment/master/common-workflow-language/tds-experiment.json
