@@ -25,7 +25,7 @@
         "repository_type": "git",
         "repository_config": {
           "clone_url": "https://github.com/somnonetz/cc-tds-app.git",
-          "commit": "cloudam2017"
+          "commit": "d6f585d311b8ed4def6524f2d5e21e52136a1a2f"
         },
         "build_type": "docker",
         "build_config": {
